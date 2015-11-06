@@ -1,0 +1,40 @@
+Questions Data Processing week 2
+
+1. Explain the difference between the == operator and the === operator.
+
+== -> you get true or false when the values are the same. Sometimes automatic conversions occur. 
+The rules for converting strings and numbers to Boolean values state that 0, NaN, and the empty string ("") count as false, 
+while all the other values count as true. Because of this, expressions like 0 == false and "" == false are also true.
+
+Where you do not want any automatic type conversions to happen, you can use === or !==
+=== -> whether a value is precisely equal to the other.
+
+2. Explain what a closure is. (Note that JavaSript programs use clorures very often.)
+A function that “closes over” some local variables. 
+
+3. Explain what higher order functions are.
+Functions that operate on other functions, either by taking them as arguments or by returning them.
+
+4. Explain what a query selector is and give an example line of JavaScript that uses a query selector. 
+It takes a selector string and returns an array-like object containing all the elements that it matches.
+
+<p>And if you go chasing
+  <span class="animal">rabbits</span></p>
+<p>And you know you're going to fall</p>
+<p>Tell 'em a <span class="character">hookah smoking
+  <span class="animal">caterpillar</span></span></p>
+<p>Has given you the call</p>
+
+<script>
+  function count(selector) {
+    return document.querySelectorAll(selector).length;
+  }
+  console.log(count("p"));           // All <p> elements
+  // → 4
+  console.log(count(".animal"));     // Class animal
+  // → 2
+  console.log(count("p .animal"));   // Animal inside of <p>
+  // → 2
+  console.log(count("p > .animal")); // Direct child of <p>
+  // → 1
+</script>
