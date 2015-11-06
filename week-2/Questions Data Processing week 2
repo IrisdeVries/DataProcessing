@@ -1,0 +1,12 @@
+Questions Data Processing week 2
+
+1. Explain the difference between the == operator and the === operator.
+
+== you get true or false when the values are the same.
+=== whether a value is precisely equal to the other.
+
+2. Explain what a closure is. (Note that JavaSript programs use clorures very often.)
+
+3. Explain what higher order functions are.
+
+4. Explain what a query selector is and give an example line of JavaScript that uses a query selector. 
