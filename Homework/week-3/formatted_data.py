@@ -11,7 +11,7 @@ temp = []
 for row in aList:
 	row_null = row[0]	
 	date.append(row_null[0:4] + '/' + row_null[4:6] + '/' + row_null[6:8])
-	temp.append(int(row[1]) / 10.0)
+	temp.append(int(row[1]))
 
 	print temp
 
