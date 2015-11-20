@@ -132,41 +132,41 @@
             }
         } 
 
-    // canvas number 2 & tooltip
-    var canvas2 = document.getElementById('canvas2');
-    var tooltip = document.getElementById("tooltip");
+        // canvas number 2 & tooltip
+        var canvas2 = document.getElementById('canvas2');
+        var tooltip = document.getElementById("tooltip");
 
-    function xMouse(canvas, evt){
-        var rect = canvas.getBoundingClientRect();
-        return evt.clientX - rect.left;
-    }
-
-    // somewhere here function tooltip
-
-    // draw function number 2
-    function draw2(x, y){
-        var ctx1 = canvas2.getContext('2d');
-        // clear crosshair after movement
-        ctx1.clearRect(0, 0, width_canv, height_canv);
-        // draw cross-hair
-        ctx1.beginPath();
-        ctx1.moveTo(x, yTransform(Ymax));
-        ctx1.lineTo(x, yTransform(Ymin));
-        ctx1.moveTo(padding, y);
-        ctx1.lineTo(width_canv, y);
-        ctx1.stroke();
-    }
-
-    // draw actual crosshair by selecting x and transforming it back
-    canvas2.onmousemove = function(event){
-        var crossHairX = Math.round(xMouse(canvas2, event));
-        // if mouse outside graph, stays at x = 0
-        if (crossHairX < padding){
-            crossHairX = padding;
+        function xMouse(canvas, evt){
+            var rect = canvas.getBoundingClientRect();
+            return evt.clientX - rect.left;
         }
-        var crossHairY = yTransform(temp[Math.round(xClientTransform(crossHairX))]);
-        draw2(crossHairX, crossHairY);
-    }
+
+        // somewhere here function tooltip
+
+        // draw function number 2
+        function draw2(x, y){
+            var ctx1 = canvas2.getContext('2d');
+            // clear crosshair after movement
+            ctx1.clearRect(0, 0, width_canv, height_canv);
+            // draw cross-hair
+            ctx1.beginPath();
+            ctx1.moveTo(x, yTransform(Ymax));
+            ctx1.lineTo(x, yTransform(Ymin));
+            ctx1.moveTo(padding, y);
+            ctx1.lineTo(width_canv, y);
+            ctx1.stroke();
+        }
+
+        // draw actual crosshair by selecting x and transforming it back
+        canvas2.onmousemove = function(event){
+            var crossHairX = Math.round(xMouse(canvas2, event));
+            // if mouse outside graph, stays at x = 0
+            if (crossHairX < padding){
+                crossHairX = padding;
+            }
+            var crossHairY = yTransform(temp[Math.round(xClientTransform(crossHairX))]);
+            draw2(crossHairX, crossHairY);
+        }
     </script>
     <body onload="draw();"></body>
 </html>
