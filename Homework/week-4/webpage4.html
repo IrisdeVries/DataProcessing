@@ -31,10 +31,10 @@
         var width_canv = document.getElementById('canvas').width;
         var height_canv = document.getElementById('canvas').height;
         var padding = 40
-        var Xmin = 0
-        var Xmax = 365
-        var Ymin = 0
-        var Ymax = 350
+        var xMin = 0
+        var xMax = 365
+        var yMin = 0
+        var yMax = 350
 
         var date = []
         var temp = []
@@ -61,11 +61,11 @@
 
         // transform the data
         // transform x
-        xTransform = transformData([Xmin, Xmax], [padding, width_canv]);
+        xTransform = transformData([xMin, xMax], [padding, width_canv]);
         // transform y
-        yTransform = transformData([Ymin, Ymax], [height_canv-padding, padding]);
+        yTransform = transformData([yMin, yMax], [height_canv-padding, padding]);
         // transform x back
-        xClientTransform = transformData([padding, width_canv], [Xmin, Xmax]);
+        xClientTransform = transformData([padding, width_canv], [xMin, xMax]);
 
         // draw function            
         function draw() {
@@ -81,8 +81,8 @@
 
                // draw axes
                 ctx.beginPath();
-                ctx.moveTo(padding, yTransform(Ymax));
-                ctx.lineTo(padding, yTransform(Ymin));
+                ctx.moveTo(padding, yTransform(yMax));
+                ctx.lineTo(padding, yTransform(yMin));
                 ctx.moveTo(padding, yTransform(0));
                 ctx.lineTo(width_canv, yTransform(0));
                 ctx.stroke();
@@ -121,7 +121,7 @@
                 ctx.stroke();  
         
                 // temperatures on y-axis                
-                for (var i = Ymin; i <= Ymax; i += 50){
+                for (var i = yMin; i <= yMax; i += 50){
                     ctx.beginPath();
                     ctx.moveTo(padding - 10, yTransform(i))
                     ctx.lineTo(padding, yTransform(i))
@@ -150,8 +150,8 @@
             ctx1.clearRect(0, 0, width_canv, height_canv);
             // draw cross-hair
             ctx1.beginPath();
-            ctx1.moveTo(x, yTransform(Ymax));
-            ctx1.lineTo(x, yTransform(Ymin));
+            ctx1.moveTo(x, yTransform(yMax));
+            ctx1.lineTo(x, yTransform(yMin));
             ctx1.moveTo(padding, y);
             ctx1.lineTo(width_canv, y);
             ctx1.stroke();
