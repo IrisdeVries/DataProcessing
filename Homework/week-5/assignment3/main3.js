@@ -263,7 +263,6 @@ colors = ["#fff5f0", "#fee0d2", "#fcbba1", "#fc9272",
 function changeColor(id, color) {
 	if (id != null){
 		if (document.getElementById(id).getElementsByTagName("path")){
-			document.getElementById(id).style.fill = color;
 			a = document.getElementById(id).getElementsByTagName("path");
 			for (var i = 0; i < a.length; i++){
 				a[i].style.fill = color;
