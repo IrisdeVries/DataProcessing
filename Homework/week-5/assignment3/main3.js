@@ -1,4 +1,3 @@
-// JavaScript
 // Population density (people per km2) by country, 2015
 
 // List of ISO 3166-1 alpha 2 country codes and
@@ -306,33 +305,33 @@ window.onload = function splitdata() {
 	for (i = 0; i < lenCountries; i++){
 		valuesInt.push(parseFloat(values[i]))
 	}
-
+    // determine scale and color countries
 	for (var k = 0; k < lenCodes; k++){
 		if (valuesInt[k] < 10){
 			changeColor(id[k],colors[0])
 		}
-		else if (valuesInt[k] > 10 && valuesInt[k] < 50){
+		else if (valuesInt[k] >= 10 && valuesInt[k] < 50){
 			changeColor(id[k],colors[1])
 		}
-		else if (valuesInt[k] > 50 && valuesInt[k] < 75){
+		else if (valuesInt[k] >= 50 && valuesInt[k] < 75){
 			changeColor(id[k],colors[2])
 		}
-		else if (valuesInt[k] > 75 && valuesInt[k] < 100){
+		else if (valuesInt[k] >= 75 && valuesInt[k] < 100){
 			changeColor(id[k],colors[3])
 		}
-		else if (valuesInt[k] > 100 && valuesInt[k] < 150){
+		else if (valuesInt[k] >= 100 && valuesInt[k] < 150){
 			changeColor(id[k],colors[4])
 		}
-		else if (valuesInt[k] > 150 && valuesInt[k] < 200){
+		else if (valuesInt[k] >= 150 && valuesInt[k] < 300){
 			changeColor(id[k],colors[5])
 		}
-		else if (valuesInt[k] > 200 && valuesInt[k] < 500){
+		else if (valuesInt[k] >= 300 && valuesInt[k] < 500){
 			changeColor(id[k],colors[6])
 		}
-		else if (valuesInt[k] > 500 && valuesInt[k] < 1000){
+		else if (valuesInt[k] >= 500 && valuesInt[k] < 1000){
 			changeColor(id[k],colors[7])
 		}
-		else if (valuesInt[k] > 1000){
+		else if (valuesInt[k] >= 1000){
 			changeColor(id[k],colors[8])
 		}
 	};
