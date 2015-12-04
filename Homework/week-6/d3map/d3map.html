@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>SVG Map</title>
+      <p> Populatiedichtheid (aantal mensen per km2) in 2015 </p>
+      <link rel="stylesheet" type="text/css" href="d3map.css"/>
+
+      <!-- Legend -->
+    <div class='my-legend'>
+    <div class='legend-title'>Aantal mensen per km2</div>
+    <div class='legend-scale'>
+      <ul class='legend-labels'>
+        <li><span style='background:#fff5f0;'></span> 0-9</li>
+        <li><span style='background:#fee0d2;'></span>10-24</li>
+        <li><span style='background:#fcbba1;'></span>25-49</li>
+        <li><span style='background:#fc9272;'></span>50-74</li>
+        <li><span style='background:#fb6a4a;'></span>75-99</li>
+        <li><span style='background:#ef3b2c;'></span>100-149</li>
+        <li><span style='background:#cb181d;'></span>150-299</li>
+        <li><span style='background:#a50f15;'></span>300-999</li>
+        <li><span style='background:#67000d;'></span>1000+</li>
+      </ul>
+    </div>
+    </div>
+    <textarea> Ik heb me laten inspireren door het voorbeeld. Ik vind het heel fijn dat de contouren van de landen waar je met de muis overheen gaat donker zijn. Op die manier kan je heel goed zien welk land je bekijkt (contrast). De rand is duidelijk zichtbaar bij zowel de lichtroze landen als de donkergekleurde landen. Ik heb mijn kaart van vorige keer uitgebreid met de mogelijkheid om te zien hoe veel inwoners een land daadwerkelijk heeft. Ik heb dit gedaan zodat je specifieke informatie kan krijgen bovenop de globale kleurinformatie (in welke range de bevolkingsdichtheid van een land valt). </textarea>
+    </head>
+    <body>
+       <div id="data_population" style ="display:none;">
+    [["Macau", "18534"], ["Monaco", "16923"], ["Singapore", "7148"], ["Hong Kong", "6349"], ["Gibraltar", "4559"], ["Vatican City", "1877"], ["Bahrain", "1646"], ["Malta", "1322"], ["Bermuda (UK)", "1226"], ["Sint Maarten (Netherlands)", "1101"], ["Maldives", "1037"], ["Bangladesh", "964"], ["Jersey (UK)", "844"], ["Guernsey (UK)", "843"], ["Saint-Martin (France)", "663"], ["Republic of China (Taiwan)", "639"], ["Mauritius", "631"], ["Barbados", "595"], ["Aruba (Netherlands)", "554"], ["Palestinian territories", "681"], ["San Marino", "505"], ["Mayotte (France)", "499"], ["South Korea", "487"], ["Nauru", "444"], ["Puerto Rico (US)", "449"], ["Cura\u00e7ao (Netherlands)", "446"], ["Lebanon", "404"], ["Saint-Barth\u00e9lemy (France)", "402"], ["Tuvalu", "402"], ["Netherlands", "411"], ["Rwanda", "380"], ["Israel", "371"], ["India", "368"], ["Haiti", "362"], ["Martinique (France)", "356"], ["Belgium", "355"], ["Marshall Islands", "343"], ["Japan", "337"], ["American Samoa (US)", "337"], ["Guam (US)", "324"], ["Saint Lucia", "319"], ["United States Virgin Islands (US)", "317"], ["R\u00e9union (France)", "313"], ["Sri Lanka", "308"], ["Philippines", "307"], ["Comoros", "302"], ["Grenada", "302"], ["Burundi", "298"], ["El Salvador", "293"], ["Saint Vincent and the Grenadines", "281"], ["Trinidad and Tobago", "261"], ["Viet Nam", "259"], ["United Kingdom", "255"], ["Guadeloupe (France)", "249"], ["Jamaica", "247"], ["Germany", "229"], ["Liechtenstein", "225"], ["Cayman Islands (UK)", "212"], ["Pakistan", "238"], ["Dominican Republic", "207"], ["Kuwait", "200"], ["Italy", "200"], ["North Korea", "200"], ["Nepal", "199"], ["Saint Kitts and Nevis", "199"], ["Antigua and Barbuda", "199"], ["Luxembourg", "194"], ["Switzerland", "188"], ["Northern Mariana Islands (US)", "188"], ["Seychelles", "185"], ["Andorra", "184"], ["Sao Tome and Principe", "169"], ["Nigeria", "167"], ["Anguilla (UK)", "165"], ["Federated States of Micronesia", "158"], ["British Virgin Islands (UK)", "152"], ["The Gambia", "151"], ["Isle of Man (UK)", "140"], ["Tonga", "139"], ["China", "143"], ["Kiribati", "137"], ["Uganda", "136"], ["Transnistria (Moldova)", "133"], ["Czech Republic", "134"], ["Guatemala", "129"], ["Malawi", "129"], ["Qatar", "128"], ["Denmark", "128"], ["Cape Verde", "126"], ["Thailand", "125"], ["Poland", "122"], ["Indonesia", "121"], ["Moldova", "105"], ["Syria", "118"], ["Togo", "117"], ["Portugal", "115"], ["Tokelau (New Zealand)", "115"], ["France", "114"], ["Slovakia", "111"], ["Albania", "111"], ["Armenia", "108"], ["Hungary", "108"], ["Azerbaijan", "106"], ["Dominica", "105"], ["Slovenia", "106"], ["Cuba", "102"], ["Serbia (excluding Kosovo)", "101"], ["Ghana", "100"], ["Austria", "100"], ["United Arab Emirates", "99"], ["Turkey", "93"], ["Spain", "91"], ["Romania", "90"], ["Costa Rica", "90"], ["Cyprus", "87"], ["Malaysia", "86"], ["Northern Cyprus (status disputed)", "86"], ["Greece", "86"], ["Cook Islands (New Zealand)", "85"], ["Republic of Macedonia", "82"], ["Cambodia", "82"], ["Sierra Leone", "79"], ["Benin", "79"], ["Turks and Caicos Islands (UK)", "79"], ["Croatia", "79"], ["Ukraine", "78"], ["Egypt", "87"], ["Wallis and Futuna (France)", "77"], ["East Timor", "76"], ["Burma (Myanmar)", "74"], ["Bosnia and Herzegovina", "75"], ["Ethiopia", "72"], ["Morocco", "75"], ["Jordan", "71"], ["Iraq", "70"], ["Brunei", "69"], ["Kenya", "69"], ["Swaziland", "68"], ["Lesotho", "68"], ["Bulgaria", "66"], ["Honduras", "66"], ["Cote d'Ivoire", "65"], ["Ireland", "65"], ["Samoa", "65"], ["French Polynesia (France)", "64"], ["Georgia", "64"], ["Senegal", "64"], ["Tunisia", "63"], ["Uzbekistan", "61"], ["Montserrat (UK)", "58"], ["Burkina Faso", "58"], ["Mexico", "57"], ["Ecuador", "55"], ["Tajikistan", "49"], ["Belarus", "47"], ["Lithuania", "47"], ["Fiji", "46"], ["Tanzania", "46"], ["Bhutan", "46"], ["Afghanistan", "46"], ["Panama", "46"], ["Iran", "45"], ["Montenegro", "45"], ["Yemen", "45"], ["Guinea-Bissau", "45"], ["Nicaragua", "44"], ["Palau", "44"], ["Eritrea", "43"], ["South Africa", "41"], ["Cameroon", "41"], ["Guinea", "41"], ["Saint Helena (UK)", "40"], ["Colombia", "42"], ["Djibouti", "37"], ["Madagascar", "35"], ["Faroe Islands (Denmark)", "35"], ["Latvia", "35"], ["Zimbabwe", "33"], ["United States", "33"], ["Liberia", "31"], ["Venezuela", "34"], ["Estonia", "29"], ["Congo, the Democratic Republic of the", "29"], ["Mozambique", "29"], ["Abkhazia (Georgia; claims independence)", "28"], ["Kyrgyzstan", "27"], ["Laos", "27"], ["Somaliland (Somalia; claims independence)", "25"], ["Saint-Pierre and Miquelon (France)", "25"], ["The Bahamas", "25"], ["Equatorial Guinea", "24"], ["Peru", "23"], ["Brazil", "24"], ["Chile", "24"], ["Sweden", "21"], ["Uruguay", "20"], ["Vanuatu", "20"], ["Solomon Islands", "18"], ["South Ossetia (Georgia; claims independence)", "18"], ["Sudan", "17"], ["Zambia", "17"], ["New Zealand", "16"], ["Finland", "16"], ["Paraguay", "16"], ["Angola", "15"], ["Algeria", "15"], ["Papua New Guinea", "15"], ["Argentina", "14"], ["Somalia", "14"], ["Belize", "14"], ["Pitcairn Islands (UK)", "13"], ["New Caledonia (France)", "13"], ["Norway", "13"], ["South Sudan", "13"], ["Niger", "12"], ["Saudi Arabia", "12"], ["Mali", "12"], ["Congo", "12"], ["Turkmenistan", "10"], ["Oman", "9.2"], ["Bolivia", "9"], ["Chad", "8.8"], ["Russia", "8.3"], ["Niue (New Zealand)", "7.7"], ["Central African Republic", "7.1"], ["Kazakhstan", "6.2"], ["Gabon", "5.5"], ["Libya", "3.6"], ["Guyana", "3.5"], ["Canada", "3.4"], ["Botswana", "3.4"], ["Mauritania", "3.2"], ["Suriname", "3.2"], ["Iceland", "3.1"], ["Australia", "3.2"], ["Namibia", "2.6"], ["French Guiana (France)", "2.1"], ["Western Sahara", "1.9"], ["Mongolia", "1.7"], ["Falkland Islands (United Kingdom)", "0.26"], ["Greenland", "0.026"],["Antarctica", "0.00007"]]
+    </div>
+
+ 
+        <div id="container1" style="height: 500px; width: 960px"></div>
+
+
+        <!-- Datamaps Source -->
+        <script src="http://datamaps.github.com/scripts/datamaps-all.js"></script>
+        
+        <script src="d3map.js"></script>
+
+              <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36315921-1']);
+  _gaq.push(['_setDomainName', 'bl.ocks.org']);
+  _gaq.push(['_setAllowLinker', true]);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+    </body>
+</html>
