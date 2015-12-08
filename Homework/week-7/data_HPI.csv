@@ -1,0 +1,152 @@
+country	life_expectancy well_being footprint HPI
+Costa Rica	73,1	6,9	2,5	48,2
+Vietnam	65,2	5,5	1,4	46
+Jamaica	61,9	5,9	1,7	42,4
+Belize	66,8	6,0	2,1	42,2
+Indonesia	57,7	5,2	1,1	42,2
+El Salvador	61,2	6,3	2,0	41,8
+Colombia	63,6	5,7	1,8	41,4
+Bangladesh	52,9	4,6	0,7	41,2
+Panama	66,7	7,0	3,0	40,1
+Cuba	74,9	4,9	1,9	39,6
+Israel	78,4	7,1	4,0	39,5
+Venezuela	65,3	7,0	3,0	38,8
+Nicaragua	63,8	5,0	1,6	38,6
+Thailand	66,6	6,0	2,4	38,4
+Guatemala	58,0	5,7	1,8	37,9
+Philippines	58,2	4,4	1,0	37,4
+Albania	68,3	4,9	1,8	37,2
+Argentina	68,5	6,0	2,7	37
+Chile	73,9	6,2	3,2	36,7
+Algeria	62,5	4,9	1,6	36
+Pakistan	44,2	4,9	0,8	35,9
+Norway	78,1	7,4	4,8	35,9
+Honduras	60,5	5,1	1,7	35,7
+New Zealand	76,5	7,0	4,3	35,4
+Mexico	68,7	6,3	3,3	34,6
+Jordan	63,8	5,3	2,1	34,6
+Laos	52,8	4,9	1,3	34,4
+Ecuador	64,9	5,5	2,4	34,4
+Peru	63,1	5,2	2,0	34,4
+Switzerland	79,0	7,3	5,0	34,3
+Brazil	63,0	6,3	2,9	34,3
+Palestine	63,4	4,3	1,4	34,3
+Kyrgyzstan	54,3	4,7	1,3	34,2
+India	47,6	4,6	0,9	34
+Sri Lanka	67,8	3,8	1,2	33,6
+Moldova	61,6	5,2	2,1	33
+Guyana	54,7	5,7	2,1	32,9
+Iraq	55,0	4,7	1,4	32,7
+United Kingdom	76,3	6,7	4,7	31,7
+Morocco	60,1	4,1	1,3	31,6
+Tajikistan	49,1	4,2	0,9	31,4
+Austria	77,5	7,1	5,3	31,3
+Germany	77,2	6,4	4,6	31,2
+Tunisia	65,1	4,2	1,8	30,8
+Sweden	78,7	7,3	5,7	30,8
+Madagascar	49,6	4,4	1,2	30,5
+France	78,1	6,5	4,9	30,5
+Japan	80,5	5,7	4,2	30,4
+Turkey	64,5	5,0	2,6	29,9
+Nepal	55,4	3,5	0,8	29,9
+Italy	78,7	5,9	4,5	29,5
+Saudi Arabia	65,5	6,3	4,0	28,9
+Cyprus	76,3	5,9	4,4	28,8
+Dominican Republic	61,6	3,8	1,4	28,4
+Netherlands	77,2	7,3	6,3	28,1
+Uzbekistan	51,7	4,8	1,8	28
+Georgia	62,6	3,7	1,4	27,9
+Canada	77,0	7,4	6,4	27,8
+Finland	76,9	7,1	6,2	27,6
+Korea	77,2	5,7	4,6	27,5
+Paraguay	59,5	5,5	3,0	27,5
+Spain	78,0	5,8	4,7	27,4
+Myanmar	48,7	5,1	1,9	27,4
+Syria	68,3	3,4	1,5	27,3
+China	63,6	4,2	2,1	27,1
+Armenia	63,1	3,8	1,7	26,9
+Ireland	77,2	6,9	6,2	26,8
+Poland	71,7	5,4	3,9	26,7
+Australia	78,1	7,1	6,7	26,3
+Malaysia	69,3	5,3	3,9	25,9
+Malta	75,5	5,2	4,3	25,7
+Haiti	42,9	3,5	0,6	25,6
+Bolivia	49,8	5,5	2,6	25,5
+Singapore	78,7	6,3	6,1	25,2
+Slovakia	71,1	5,7	4,7	25
+Lebanon	62,8	4,6	2,8	25
+Bosnia and Herzegovina	68,5	4,2	2,7	24,9
+Croatia	72,4	5,2	4,2	24,9
+Malawi	32,5	4,5	0,8	24,8
+Iceland	79,3	6,5	6,5	24,7
+Yemen	49,0	3,3	0,9	24,7
+Serbia	68,3	4,0	2,6	24,3
+Czech Republic	74,6	5,8	5,3	24,3
+Romania	67,0	4,3	2,8	24,2
+Slovenia	76,1	5,6	5,2	24,2
+Namibia	49,3	4,6	2,0	24,2
+Cambodia	44,9	3,9	1,2	24,1
+Libya	67,6	4,5	3,2	23,9
+Greece	76,1	5,2	4,9	23,4
+Belarus	65,2	5,2	4,0	23,3
+Zambia	28,5	4,9	0,8	23,3
+Ukraine	61,2	4,7	3,2	23
+Denmark	75,3	7,6	8,3	22,9
+Uruguay	69,8	5,7	5,1	22,9
+Kenya	37,6	3,9	0,9	22,8
+Belgium	76,5	6,6	7,1	22,7
+Zimbabwe	35,6	4,4	1,2	22,7
+Ghana	46,5	4,2	1,7	22,5
+Iran	61,2	4,1	2,7	22,3
+Mozambique	29,7	4,4	0,8	22,1
+Azerbaijan	56,2	3,7	2,0	22,1
+Hong Kong	80,4	5,3	5,8	22
+Ethiopia	38,3	4,0	1,1	22
+United States of America	73,4	6,7	7,2	21,9
+Portugal	75,7	4,4	4,1	21,6
+Hungary	70,2	4,3	3,6	21,6
+Egypt	63,0	3,4	2,1	21,5
+Turkmenistan	47,6	6,3	4,0	21,5
+Mauritius	66,3	5,1	4,6	20,9
+Rwanda	32,5	3,7	0,7	20,8
+Cote d'Ivoire	34,5	3,9	1,0	20,6
+Afghanistan	23,9	4,4	0,5	20,4
+Estonia	70,3	4,8	4,7	20,1
+Russia	61,4	5,1	4,4	20
+Comoros	41,2	3,6	1,3	19,8
+Sudan	41,2	4,0	1,6	19,7
+Kazakhstan	56,1	5,2	4,1	19,7
+Latvia	68,2	4,3	4,0	19,6
+Lithuania	67,0	4,6	4,4	19,6
+Djibouti	36,5	4,5	1,8	19
+United Arab Emirates	71,7	7,0	8,9	18,8
+Liberia	35,5	3,9	1,3	18,8
+Bulgaria	67,6	3,7	3,6	18,1
+Congo	36,1	3,4	1,1	17,8
+Cameroon	29,4	4,0	1,1	17,6
+Senegal	41,1	3,4	1,5	17,4
+Angola	27,5	3,8	0,9	17
+Luxembourg	77,2	6,8	10,7	16,9
+Nigeria	29,2	4,3	1,4	16,8
+Trinidad and Tobago	58,4	6,4	7,6	16
+Burundi	27,4	3,5	0,8	15,9
+Uganda	33,0	3,8	1,6	15,6
+Burkina Faso	32,3	3,8	1,5	15,6
+Kuwait	69,6	6,5	9,7	15,6
+Mauritania	37,4	4,6	2,9	15,5
+Congo, Dem. Rep. of the	24,2	3,6	0,8	15,5
+South Africa	37,8	4,3	2,6	15,2
+Tanzania	39,3	2,8	1,2	15
+Benin	33,5	3,2	1,4	14,5
+Sierra Leone	26,2	3,5	1,1	13,7
+Guinea	31,0	3,6	1,7	13,7
+Bahrain	70,5	4,1	6,6	13,2
+Macedonia	67,8	3,6	5,4	13,1
+Qatar	72,7	6,1	11,7	13
+Togo	35,8	2,5	1,0	12,7
+Mongolia	55,7	4,2	5,5	12,6
+Central African Republic	26,1	3,3	1,4	12
+Niger	31,4	3,9	2,6	11,8
+Mali	27,6	3,4	1,9	11,2
+Botswana	40,3	3,1	2,8	10,7
+Chad	23,8	3,5	1,9	10
