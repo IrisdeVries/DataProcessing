@@ -1,0 +1,112 @@
+p {
+	font-family: Verdana;
+    font-size: 15px;		
+}
+
+bar:hover {
+  fill: black;
+}
+
+.my-legend .legend-title {
+   font-family: Verdana;
+   text-align: left;
+   margin-bottom: 5px;
+   font-weight: bold;
+   font-size: 90%;
+}
+.my-legend .legend-scale ul {
+   font-family: Verdana;
+   margin: 0;
+   margin-bottom: 5px;
+   padding: 0;
+   float: left;
+   list-style: none;
+}
+.my-legend .legend-scale ul li {
+   font-family: Verdana;
+   font-size: 80%;
+   list-style: none;
+   margin-left: 0;
+   line-height: 18px;
+   margin-bottom: 2px;
+}
+.my-legend ul.legend-labels li span {
+   	font-family: Verdana;
+   display: block;
+   float: left;
+   height: 16px;
+   width: 30px;
+   margin-right: 5px;
+   margin-left: 0;
+   border: 1px solid #999;
+}
+.my-legend .legend-source {
+   	font-family: Verdana;
+   font-size: 70%;
+   color: #999;
+   clear: both;
+}
+.my-legend a {
+		font-family: Verdana;
+   color: #777;
+}
+
+.chart{
+/*	border: solid black 1px;*/
+	position: relative;
+}
+
+.chart2{
+/*	border: solid black 1px;*/
+	position: relative;
+}
+
+.chart3{
+/*	border: solid black 1px;*/
+	position: relative;
+}
+
+.chart rect {
+  fill: gray;
+}
+
+.chart2 rect {
+  fill: gray;
+}
+
+.chart3 rect {
+  fill: gray;
+}
+
+.chart text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart2 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.chart3 text {
+  fill: white;
+  font: 10px sans-serif;
+  text-anchor: end;
+}
+
+.container{
+	border: solid black 1px;
+}
+
+.axis text {
+  font: 10px sans-serif;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}

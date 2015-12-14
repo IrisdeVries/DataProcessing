@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/topojson/1.6.9/topojson.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<img src="logo_HPI.png" alt="logo" style="width:150px;height:100px;">
+<p> The new HPI results show the extent to which 151 countries across the globe produce long, happy and sustainable 
+    	lives for the people that live in them.  The overall index scores rank countries based on their efficiency, 
+    	how many long and happy lives each produces per unit of environmental output. 
+    	- See more at: http://www.happyplanetindex.org/data/#sthash.2NZUYyoi.dpuf </p>
+    <p>Each of the three component measures:life expectancy, experienced well-being and 
+    	Ecological Footprint is given a traffic-light score based on thresholds for good (green), 
+    	middling (amber) and bad (red) performance. A simplified version of the formula for HPI is HPI = (well-being * life expectancy)/ ecological footprint.
+    	A country would have to perform well on all three individual components to get a high HPI score.
+
+		By clicking on any individual country in the map or table you can explore the components of the HPI of that country in the bar chart.</p>
+
+	<div class='my-legend'>
+    <div class='legend-title'> Hapy Planet Index</div>
+    <div class='legend-scale'>
+      <ul class='legend-labels'>
+        <li><span style='background:greenyellow;'></span> good</li>
+        <li><span style='background:orange;'></span>middle</li>
+        <li><span style='background:red;'></span>bad</li>
+        <li><span style='background:lightgray;'></span>no data</li>
+      </ul>
+    </div>
+    </div>
+<script src="datamaps.world.min.js"></script>
+
+<p><svg id="container" style="position: relative; width: 500px; height: 300px;"></div></p>
+<p>Click on a country to </p>
+<p>show the components of its hpi score</p>
+<p><svg class="chart"></svg></p>
+<p><svg class="chart2"></svg></p>
+<p><svg class="chart3"></svg></p>
+<meta charset="utf-8">
+<link rel="stylesheet" type="text/css" href="dashd3.css"/>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script src="dashd3.js"></script>
+</html>
