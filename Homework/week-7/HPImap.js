@@ -1,3 +1,8 @@
+// Population density (people per km2) by country, 2015
+// Iris de Vries
+
+// List of ISO 3166-1 alpha 2 country codes and
+// their respective alpha 3 country codes and country names.
 var country_codes = [
     ["af", "AFG", "Afghanistan"],
     ["ax", "ALA", "Åland Islands"],
@@ -234,7 +239,7 @@ var country_codes = [
     ["ua", "UKR", "Ukraine"],
     ["ae", "ARE", "United Arab Emirates"],
     ["gb", "GBR", "United Kingdom"],
-    ["us", "USA", "United States of America"],
+    ["us", "USA", "United States"],
     ["um", "UMI", "United States Minor Outlying Islands"],
     ["uy", "URY", "Uruguay"],
     ["uz", "UZB", "Uzbekistan"],
@@ -249,189 +254,90 @@ var country_codes = [
     ["zm", "ZMB", "Zambia"],
     ["zw", "ZWE", "Zimbabwe"] ];
 
-function clearBarChart(){
-	var chart = d3.select(".chart")
-	chart.selectAll("*").remove();
-	var chart2 = d3.select(".chart2")
-	chart2.selectAll("*").remove()
-	var chart3 = d3.select(".chart3")
-	chart3.selectAll("*").remove()
-}
+/* splitdata splits the countries and the values and 
+pushes them into countries and values */
+window.onload = function splitdata() {
+    countries = []
+    life_expectancies = []
+    well_beings = []
+    footprints = []
+    HPIs = []
+    data = JSON.parse(document.getElementById("data_population").innerHTML);
+    for(var i = 0; i < data.length; i++){
+        country = data[i][0];
+        life_expectancy = data[i][1];
+        well_being = data[i][2]
+        footprint = data[i][3]
+        HPI = data[i][4]
+        countries.push(country)
+        life_expectancies.push(+life_expectancy)
+        well_beings.push(well_being)
+        footprints.push(footprint)
+        HPIs.push(HPI)
+    }
+    // length of country_codes and length of countries
+    lenCodes = country_codes.length //249
+    lenCountries = countries.length // 242
+    //lenValues = values.length // 242
 
-function createBarChart (country){
-    var tooltip = d3.select("body")
-    .append("div")
-    .style("position", "absolute")
-    .style("z-index", "10")
-    .style("visibility", "hidden")
-    .text(country);
-
-	var width = 420,
-	barHeight = 20;
-	data = [MyObject[country]]
-
-    // BAR 1: well-being
-	var x = d3.scale.linear()
-	    .range([0, width]);
-
-	x.domain([0, d3.max(data, function(d) { return 10; })]);
-
-	// var xAxis = d3.svg.axis()
-	//     .scale(x)
-	//     .orient("bottom");
-
-    // Wanted axis, but didn't manage to position it right
-
-	var chart = d3.select(".chart")
-	    .attr("width", width);
-
-    var bar = chart.selectAll("g")
-      .data(data)
-    .enter().append("g")
-      .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-
-    bar.append("rect")
-      .attr("width", function(d) { return x(d.well_being); })
-      .attr("height", barHeight - 1)
-      .on("mouseover", function() { return tooltip.style("visibility", "visible");})
-      .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-      .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
-
-    bar.append("text")
-      .attr("x", function(d) { return x(d.well_being) - 3; })
-      .attr("y", barHeight / 2)
-      .attr("dy", ".35em")
-      .text(function(d) { return "well-being:  " + d.well_being*10; });
-
-	chart.attr("height", barHeight);
-
-    // BAR 2: life expectancy
-	var x = d3.scale.linear()
-	    .range([0, width]);
-
-	x.domain([0, d3.max(data, function(d) { return 100; })]);
-
-	var chart = d3.select(".chart2")
-	    .attr("width", width);
-
-	    var bar = chart.selectAll("g")
-	      .data(data)
-	    .enter().append("g")
-	      .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; });
-
-	    bar.append("rect")
-	      .attr("width", function(d) { return x(d.life_expectancy); })
-	      .attr("height", barHeight - 1)
-          .on("mouseover", function() { return tooltip.style("visibility", "visible");})
-          .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-          .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
-
-	  bar.append("text")
-	      .attr("x", function(d) { return x(d.life_expectancy) - 3; })
-	      .attr("y", barHeight / 2)
-	      .attr("dy", ".35em")
-	      .text(function(d) { return "life expectancy:  " + d.life_expectancy; });
-
-	chart.attr("height", barHeight);
-
-    // BAR 3: footprint
-	var x = d3.scale.linear()
-	    .range([0, width]);
-
-	x.domain([0, d3.max(data, function(d) { return 10; })]);
-
-	var chart = d3.select(".chart3")
-	    .attr("width", width);
-
-	    var bar = chart.selectAll("g")
-	      .data(data)
-	    .enter().append("g")
-	      .attr("transform", function(d, i) { return "translate(0," + i * barHeight + ")"; })
-	      // .call(xAxis);
-
-	  bar.append("rect")
-	      //.attr("width", function(d) { return x(d.footprint); })
-	      .attr("width", function(d) { return x(d.footprint); })
-	      .attr("height", barHeight - 1)
-          .on("mouseover", function() { return tooltip.style("visibility", "visible");})
-          .on("mousemove", function(){return tooltip.style("top", (event.pageY-10)+"px").style("left",(event.pageX+10)+"px");})
-          .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
-
-	  bar.append("text")
-	      .attr("x", function(d) { return x(d.footprint) - 3; })
-	      .attr("y", barHeight / 2)
-	      .attr("dy", ".35em")
-	      .text(function(d) { return "ecological footprint:  " + d.footprint*10; });
-
-	chart.attr("height", barHeight);
-	}
-
-d3.tsv("data_HPI.tsv", function(error, data) {
-  	MyObject = {}
-  	id = []
- 	countries = []
- 	hpi_value = []
- 	for (var j = 0; j < data.length; j++){
- 		countries.push(data[j]["country"])
- 		for (var n = 0; n < country_codes.length; n++){
-            if (countries[j] == country_codes[n][2]){
-                id.push(country_codes[n][1])
+    // match name of country in countries with names in 
+    // country_codes and determine id of country
+    id = []
+    names = []
+    people = []
+    for(var i = 0; i < lenCountries; i++){
+        for (var j = 0; j < lenCodes; j++){
+            if (countries[i] == country_codes[j][2]){
+                id.push(country_codes[j][1])
+                console.log(id)
             }  
         }  
-
- 		// replace comma in data
-	  	life_expectancy = data[j]["life_expectancy"].replace(",", ".")
-	  	well_being = data[j]["well_being"].replace(",", ".")
-	  	footprint = data[j]["footprint"].replace(",", ".")
-	  	hpi = data[j]["HPI"].replace(",", ".")
-
-	  	// coerce data from strings to numbers
-	  	life_expectancy = +life_expectancy
-	  	well_being = +well_being
-	  	footprint = +footprint
-	  	hpi = +hpi
-	  	hpi_value.push(hpi)
-
-	  	// make object
-	  	MyObject[data[j]["country"]] = {"life_expectancy" : life_expectancy, "well_being" : well_being, "footprint" : footprint}
     }
 
-// make associative array and match fillKey based on values of id country
-a = {}
-for (var l = 0; l < id.length; l++){
-	if (hpi_value[l] < 20){
-    	a[id[l]] = {fillKey : 'bad'};
+    // transform values stored as strings to floats WAAROM GEEN FLOAR MAAR AFGEROND??
+    HPIsF = []
+    for (i = 0; i < lenCountries; i++){
+        HPIsF.push(parseFloat(HPIs[i]))
     }
-    else if (hpi_value[l] >= 20 && hpi_value[l] < 40){
-        a[id[l]] = {fillKey : 'middle'};
-    }
-    else if (hpi_value[l] >= 40 && hpi_value[l] < 51){
-        a[id[l]] = {fillKey : 'good'};
-    }
-}
-
-// make map and color countries
-var map = new Datamap({
-    element: document.getElementById('container'),
-    fills: {
-    	'bad': 'red',
-        'middle': 'orange',
-        'good': 'greenyellow',
-        defaultFill: 'lightgray'
-    },
-    data: a,
-    geographyConfig: {
-        highlightBorderColor: "gray",
-        highlightFillColor: "gray",
-        popupTemplate: function(geo, data) {
-            if (!data) return ["<div class=\"hoverinfo\">" + geo.properties.name +": no data</div>"];
-            return ["<div class=\"hoverinfo\">" + data.tooltip + "</div>"];}
-    },
-    done: function(datamap) {
-        datamap.svg.selectAll('.datamaps-subunit').on('click', function(geography) {
-        	clearBarChart()
-            createBarChart(geography.properties.name)
-            });
+    console.log(HPIsF) 
+    //determine scale and color countries
+    // a is an associative array
+    var a = {}
+    for (var k = 0; k < lenCountries; k++){
+        if (HPIsF[k] < 20){
+            a[id[k]] = {fillKey : 'bad'};
         }
-    });
-});
+        else if (HPIsF[k] >= 20 && HPIsF[k] < 40){
+            a[id[k]] = {fillKey : 'middle'};
+        }
+        else if (HPIsF[k] >= 40 && HPIsF[k] < 51){
+            a[id[k]] = {fillKey : 'good'};
+        }
+    }  
+    // make the map      
+    $("#container").datamap({
+        scope: 'world',
+        geography_config: {
+            borderColor: 'rgba(255,255,255,0.3)',
+            highlightBorderColor: 'rgba(0,0,0,0.5)',
+            popupTemplate: _.template([
+            '<div class="hoverinfo">',
+            '<% if (data.name) { %> <strong><%= data.name %></strong><br/><% } %>',
+            '<% if (data.people) { %>',
+            'People: <%= data.people %><br/> <% } %>',
+            '<%= geography.properties.name %>',
+            '</div>'
+            ].join('') )
+        },
+        // colorscale countries
+        fills: {
+            'bad': 'red',
+            'middle': 'orange',
+            'good': 'greenyellow',
+            defaultFill: 'lightyellow'
+        },
+
+        // add associative array a
+        data : a
+    })
+};

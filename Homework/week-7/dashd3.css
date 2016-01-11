@@ -3,6 +3,10 @@ p {
     font-size: 15px;		
 }
 
+bar:hover {
+  fill: black;
+}
+
 .my-legend .legend-title {
    font-family: Verdana;
    text-align: left;
